@@ -1,0 +1,2 @@
+# bluecadet_gcse
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a1656063c20c494e95e34434bd8f9918)](https://app.codacy.com/app/pingevt/bluecadet_gcse?utm_source=github.com&utm_medium=referral&utm_content=bluecadet/bluecadet_gcse&utm_campaign=Badge_Grade_Dashboard)
