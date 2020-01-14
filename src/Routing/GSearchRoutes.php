@@ -19,7 +19,8 @@ class GSearchRoutes {
       // Route defaults:
       array(
         '_controller' => 'Drupal\bluecadet_gcse\Controller\GCSESearch::searchDisplay',
-        '_title' => 'Search'
+        // '_title' => 'Search'
+        '_title_callback' => 'Drupal\bluecadet_gcse\Controller\GCSESearch::searchDisplayTitle',
       ),
       // Route requirements:
       array(

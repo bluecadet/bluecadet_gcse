@@ -21,4 +21,14 @@ class GCSESearch extends ControllerBase {
 
     return $build;
   }
+
+  public function searchDisplayTitle() {
+
+    // Alter page title to display search keys
+    $keys = \Drupal::request()->query->get('keys');
+    $title = $keys ? 'Search Results for ' . urldecode($keys) : 'Search Results';
+
+    return $title;
+
+  }
 }
