@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class GCSESearch extends ControllerBase {
 
-  public function searchDisplay($search_term = '', Request $request) {
+  public function searchDisplay(Request $request) {
     $build = [];
 
     $settings = \Drupal::state()->get('bluecadet_gcse.settings', ['gcse_id' => '', 'gcse_path' => 'gsearch']);
