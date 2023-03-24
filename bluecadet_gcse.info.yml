@@ -7,3 +7,4 @@ version: '2.0.0'
 core_version_requirement: ^9 || ^10
 
 configure: gcse.search_settings
+project: bluecadet_gcse
