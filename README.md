@@ -1,8 +1,12 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/23b6df713d3f4957817281c453fe1f97)](https://www.codacy.com/app/pingevt/bluecadet_gcse?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bluecadet/bluecadet_gcse&amp;utm_campaign=Badge_Grade)
-
 # Bluecadet's Google Custom Search Engine
 
 ## Changelog
+
+### 2.0.0
+
+- Support Drupal 10
+- Support PHP 8
+- Adds in update status to check module version updates
 
 ### 8.x-1.0.5
 
