@@ -1,6 +1,6 @@
 {
-  "name": "bluecadet_gse",
-  "version": "2.0.0-alpha5",
+  "name": "bluecadet_gcse",
+  "version": "2.0.0-alpha6",
   "description": "",
   "main": "index.js",
   "scripts": {
