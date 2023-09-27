@@ -22,6 +22,7 @@
   "homepage": "https://github.com/bluecadet/bluecadet_gse#readme",
   "dependencies": {
     "@bluecadet/bldr": "^0.7.4",
+    "@bluecadet/drops": "^1.0.0-alpha.1",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-eslint": "^8.0.2",

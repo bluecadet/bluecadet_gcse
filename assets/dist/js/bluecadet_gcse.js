@@ -1,0 +1,1 @@
+!function(){"use strict";!function(e){var t=e.gsearch.gcse_id,c=document.createElement("script");c.type="text/javascript",c.async=!0,c.src="https://cse.google.com/cse.js?cx="+t;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(c,s)}(drupalSettings)}();

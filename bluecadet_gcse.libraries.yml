@@ -1,6 +1,6 @@
 gcse:
   version: 1.x
   js:
-    js/bluecadet_gcse.js: {}
+    assets/dist/js/bluecadet_gcse.js: {}
   dependencies:
     - core/drupalSettings
