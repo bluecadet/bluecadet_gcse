@@ -1,14 +1,13 @@
 {
   "name": "bluecadet_gse",
-  "version": "v2.0.0-alpha1",
+  "version": "2.0.0-alpha2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "build": "npx bldr build",
     "clean": "rm -rfv ./assets/dist/* && rm -rfv ./modules/**/assets/dist/*",
-    "watch": "npx bldr watch",
-    "set-version": "node ./bin/version.js"
+    "watch": "npx bldr watch"
   },
   "repository": {
     "type": "git",
