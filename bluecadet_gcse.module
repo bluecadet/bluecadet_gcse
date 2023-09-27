@@ -16,8 +16,7 @@ function bluecadet_gcse_theme($existing, $type, $theme, $path) {
 
 function bluecadet_gcse_update_status_alter(&$projects) {
   $modules['bluecadet'] = [
-    'bluecadet_utilities',
-    'bluecadet_file_struct',
+    'bluecadet_gcse',
   ];
 
   $filtered_projects = [];
