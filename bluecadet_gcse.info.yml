@@ -10,3 +10,9 @@ dependencies: []
 configure: gcse.search_settings
 
 
+
+
+# Information added by packaging script on 2023-09-27
+version: v2.0.0-alpha1
+project: bluecadet_gse
+datestamp: 1695836448491
