@@ -12,7 +12,7 @@ configure: gcse.search_settings
 
 
 
-# Information added by packaging script on 2023-09-29
-version: 2.0.0-alpha7
+# Information added by packaging script on 2023-10-06
+version: 2.0.0-alpha8
 project: bluecadet_gcse
-datestamp: 1695993752922
+datestamp: 1696605738572
