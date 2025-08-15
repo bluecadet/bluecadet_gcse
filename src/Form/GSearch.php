@@ -10,6 +10,7 @@ use Drupal\Core\Url;
  * Configure Paragraph examples to upload images per para bundle.
  */
 class GSearch extends FormBase {
+
   /**
    * {@inheritdoc}
    */
@@ -67,10 +68,22 @@ class GSearch extends FormBase {
     }
   }
 
-  public function afterBuild(array $element, FormStateInterface $form_state) {
+  /**
+   * After build handler to remove form tokens.
+   *
+   * @param array $element
+   *   The form element.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state.
+   *
+   * @return array
+   *   The modified form element.
+   */
+  public function afterBuild(array $element, FormStateInterface $form_state): array {
     unset($element['form_token']);
     unset($element['form_build_id']);
     unset($element['form_id']);
     return $element;
   }
+
 }

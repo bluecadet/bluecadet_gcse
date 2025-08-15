@@ -1,17 +1,21 @@
 <?php
 
+/**
+ * @file
+ * Implements hook_theme_suggestions_HOOK().
+ */
+
 use Bluecadet\DrupalPackageManager\Checker;
-use Drupal\update\UpdateManagerInterface;
 
 /**
  * Implements hook_theme().
  */
 function bluecadet_gcse_theme($existing, $type, $theme, $path) {
-  return array(
-    'gcse_page' => array(
+  return [
+    'gcse_page' => [
       'variables' => [],
-    ),
-  );
+    ],
+  ];
 }
 
 function bluecadet_gcse_update_status_alter(&$projects) {
@@ -22,7 +26,7 @@ function bluecadet_gcse_update_status_alter(&$projects) {
   $filtered_projects = [];
 
   foreach ($modules as $user => $user_data) {
-    $filtered_projects += array_filter($projects, function($v) use ($user_data) {
+    $filtered_projects += array_filter($projects, function ($v) use ($user_data) {
         return in_array($v, $user_data);
     }, ARRAY_FILTER_USE_KEY);
   }

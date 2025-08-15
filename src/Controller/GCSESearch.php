@@ -5,9 +5,21 @@ namespace Drupal\bluecadet_gcse\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Provides search functionality for GCSE content.
+ */
 class GCSESearch extends ControllerBase {
 
-  public function searchDisplay(Request $request) {
+  /**
+   * Displays the search results.
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   The request object.
+   *
+   * @return array
+   *   A render array for the search results.
+   */
+  public function searchDisplay(Request $request): array {
     $build = [];
 
     $settings = \Drupal::state()->get('bluecadet_gcse.settings', ['gcse_id' => '', 'gcse_path' => 'gsearch']);
@@ -22,7 +34,13 @@ class GCSESearch extends ControllerBase {
     return $build;
   }
 
-  public function searchDisplayTitle() {
+  /**
+   * Displays the search results title.
+   *
+   * @return string
+   *   The search results title.
+   */
+  public function searchDisplayTitle(): string {
 
     // Alter page title to display search keys
     $keys = \Drupal::request()->query->get('keys');
@@ -31,4 +49,5 @@ class GCSESearch extends ControllerBase {
     return $title;
 
   }
+
 }

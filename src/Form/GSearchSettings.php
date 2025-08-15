@@ -9,6 +9,7 @@ use Drupal\Core\Form\FormBase;
  * Configure Paragraph examples to upload images per para bundle.
  */
 class GSearchSettings extends FormBase {
+
   /**
    * {@inheritdoc}
    */
@@ -39,11 +40,11 @@ class GSearchSettings extends FormBase {
       '#description' => $this->t('Enter the path for the search page. Please include preceeding slash but not the trailing slash.'),
     ];
 
-    $form['actions'] = array('#type' => 'actions');
-    $form['actions']['submit'] = array(
+    $form['actions'] = ['#type' => 'actions'];
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Save'),
-    );
+    ];
     return $form;
   }
 
