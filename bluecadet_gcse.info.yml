@@ -13,6 +13,6 @@ configure: gcse.search_settings
 
 
 # Information added by packaging script on 2025-08-20
-version: 2.1.0-rc1
+version: 2.1.0-rc2
 project: bluecadet_gcse
-datestamp: 1755694572445
+datestamp: 1755695417936
