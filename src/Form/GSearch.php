@@ -55,16 +55,10 @@ class GSearch extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    if (isset($_GET['destination'])) {
-      unset($_GET['destination']);
+    $request = $this->getRequest();
+    if ($request->query->has('destination')) {
+      $request->query->remove('destination');
     }
   }
 

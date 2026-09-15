@@ -18,6 +18,9 @@ function bluecadet_gcse_theme($existing, $type, $theme, $path) {
   ];
 }
 
+/**
+ * Implements hook_update_status_alter().
+ */
 function bluecadet_gcse_update_status_alter(&$projects) {
   $modules['bluecadet'] = [
     'bluecadet_gcse',

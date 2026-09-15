@@ -4,11 +4,46 @@ namespace Drupal\bluecadet_gcse\Form;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\FormBase;
+use Drupal\Core\Routing\RouteBuilderInterface;
+use Drupal\Core\State\StateInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Configure Paragraph examples to upload images per para bundle.
  */
 class GSearchSettings extends FormBase {
+
+  /**
+   * Drupal State.
+   *
+   * @var \Drupal\Core\State\StateInterface
+   */
+  protected $state;
+
+  /**
+   * Route builder.
+   *
+   * @var \Drupal\Core\Routing\RouteBuilderInterface
+   */
+  protected $routeBuilder;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(StateInterface $state, RouteBuilderInterface $route_builder) {
+    $this->state = $state;
+    $this->routeBuilder = $route_builder;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('state'),
+      $container->get('router.builder'),
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -22,7 +57,7 @@ class GSearchSettings extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    $settings = \Drupal::state()->get('bluecadet_gcse.settings', ['gcse_id' => '', 'gcse_path' => 'gsearch']);
+    $settings = $this->state->get('bluecadet_gcse.settings', ['gcse_id' => '', 'gcse_path' => 'gsearch']);
 
     $form['settings']['#tree'] = TRUE;
 
@@ -51,21 +86,14 @@ class GSearchSettings extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    parent::validateForm($form, $form_state);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $values = $form_state->getValues();
 
     $settings = $values['settings'];
-    \Drupal::state()->set('bluecadet_gcse.settings', $settings);
+    $this->state->set('bluecadet_gcse.settings', $settings);
 
     // Rebuild routes.
-    \Drupal::service("router.builder")->rebuild();
+    $this->routeBuilder->rebuild();
 
     $this->messenger()->addMessage('You have saved your settings.');
   }
