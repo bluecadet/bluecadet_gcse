@@ -3,12 +3,16 @@
 namespace Drupal\Tests\bluecadet_gcse\Kernel;
 
 use Drupal\KernelTests\KernelTestBase;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Tests update status alter behavior.
  *
  * @group bluecadet_gcse
  */
+#[Group('bluecadet_gcse')]
+#[RunTestsInSeparateProcesses]
 class UpdateStatusAlterTest extends KernelTestBase {
 
   /**
@@ -33,6 +37,16 @@ class UpdateStatusAlterTest extends KernelTestBase {
     bluecadet_gcse_update_status_alter($projects);
 
     $this->assertSame($expected, $projects);
+  }
+
+  /**
+   * The module registers the search results theme hook.
+   */
+  public function testThemeHook(): void {
+    $this->assertSame(
+      ['gcse_page' => ['variables' => []]],
+      bluecadet_gcse_theme([], 'module', 'bluecadet_gcse', ''),
+    );
   }
 
 }
