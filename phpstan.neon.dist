@@ -8,3 +8,5 @@ parameters:
     - '*/tests/fixtures/*.php'
   ignoreErrors:
     - '#Unsafe usage of new static\(\)#'
+    # PHPUnit attributes are for Drupal 11.3+; Drupal 10 (PHPUnit 9) doesn't define them.
+    - '#Attribute class PHPUnit\\Framework\\Attributes\\.+ does not exist#'

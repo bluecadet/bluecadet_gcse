@@ -10,6 +10,9 @@ use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Tests the search form block and the form it renders.
+ *
+ * @coversDefaultClass \Drupal\bluecadet_gcse\Plugin\Block\GSearchFormBlock
+ * @group bluecadet_gcse
  */
 #[CoversClass(GSearchFormBlock::class)]
 #[Group('bluecadet_gcse')]

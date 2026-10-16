@@ -11,6 +11,9 @@ use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Tests the settings form and the route it controls.
+ *
+ * @coversDefaultClass \Drupal\bluecadet_gcse\Form\GSearchSettings
+ * @group bluecadet_gcse
  */
 #[CoversClass(GSearchSettings::class)]
 #[Group('bluecadet_gcse')]

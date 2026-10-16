@@ -10,6 +10,9 @@ use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Tests the dynamic GCSE search route.
+ *
+ * @coversDefaultClass \Drupal\bluecadet_gcse\Routing\GSearchRoutes
+ * @group bluecadet_gcse
  */
 #[CoversClass(GSearchRoutes::class)]
 #[Group('bluecadet_gcse')]

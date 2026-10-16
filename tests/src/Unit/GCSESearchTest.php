@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Tests the GCSESearch controller.
+ *
+ * @coversDefaultClass \Drupal\bluecadet_gcse\Controller\GCSESearch
+ * @group bluecadet_gcse
  */
 #[CoversClass(GCSESearch::class)]
 #[Group('bluecadet_gcse')]

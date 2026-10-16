@@ -10,6 +10,9 @@ use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Tests the unit-testable parts of the search form.
+ *
+ * @coversDefaultClass \Drupal\bluecadet_gcse\Form\GSearch
+ * @group bluecadet_gcse
  */
 #[CoversClass(GSearch::class)]
 #[Group('bluecadet_gcse')]

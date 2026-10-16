@@ -8,6 +8,8 @@ use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Tests the search page, the settings page and the search form block.
+ *
+ * @group bluecadet_gcse
  */
 #[Group('bluecadet_gcse')]
 #[RunTestsInSeparateProcesses]
