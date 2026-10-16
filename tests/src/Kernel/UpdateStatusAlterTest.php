@@ -39,4 +39,14 @@ class UpdateStatusAlterTest extends KernelTestBase {
     $this->assertSame($expected, $projects);
   }
 
+  /**
+   * The module registers the search results theme hook.
+   */
+  public function testThemeHook(): void {
+    $this->assertSame(
+      ['gcse_page' => ['variables' => []]],
+      bluecadet_gcse_theme([], 'module', 'bluecadet_gcse', ''),
+    );
+  }
+
 }
