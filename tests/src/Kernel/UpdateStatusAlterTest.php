@@ -3,12 +3,16 @@
 namespace Drupal\Tests\bluecadet_gcse\Kernel;
 
 use Drupal\KernelTests\KernelTestBase;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Tests update status alter behavior.
  *
  * @group bluecadet_gcse
  */
+#[Group('bluecadet_gcse')]
+#[RunTestsInSeparateProcesses]
 class UpdateStatusAlterTest extends KernelTestBase {
 
   /**
