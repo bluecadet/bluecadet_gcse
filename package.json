@@ -11,20 +11,34 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluecadet/bluecadet_gse.git"
+    "url": "git+https://github.com/bluecadet/bluecadet_gcse.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bluecadet/bluecadet_gse/issues"
+    "url": "https://github.com/bluecadet/bluecadet_gcse/issues"
   },
-  "homepage": "https://github.com/bluecadet/bluecadet_gse#readme",
+  "homepage": "https://github.com/bluecadet/bluecadet_gcse#readme",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
-    "@bluecadet/bldr": "^1.0.6",
-    "@bluecadet/drops": "^1.0.0"
+    "@bluecadet/bldr": "2.0.0-alpha.12",
+    "@bluecadet/drops": "^1.2.1",
+    "postcss-advanced-variables": "^5.0.0",
+    "postcss-assets": "^6.0.0",
+    "postcss-custom-media": "^11.0.6",
+    "postcss-discard-comments": "^7.0.8",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-nested": "^7.0.2",
+    "postcss-preset-env": "^10.6.1"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
-    "postcss-pxtorem": "^6.0.0"
+    "postcss-pxtorem": "^6.1.0"
+  },
+  "overrides": {
+    "postcss-strip-inline-comments": {
+      "postcss": "^8.5.15"
+    }
   }
 }
