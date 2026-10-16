@@ -4,14 +4,14 @@ Adds a Google Custom Search Engine (GCSE) integration to Drupal — a settings f
 
 ## Requirements
 
-- Drupal 10.5+ or Drupal 11.2+
+- Drupal 10.6+ or Drupal 11.3+
 - PHP 8.2 or higher
 
 ## Versions
 
 ### 2.1 Branch
 
-- **2.1.x**: Drupal 10.5+/11.2+ support (PHP 8.2+)
+- **2.1.x**: Drupal 10.6+/11.3+ support (PHP 8.2+)
 
 ### 2.0 Branch
 
@@ -53,7 +53,7 @@ line as well as the location for the module.
 
 ## Testing
 
-This module includes automated tests that run via GitHub Actions against Drupal 10.5.x-11.3.x (see `.github/drupal-ci.yml` for the exact PHP/MariaDB matrix).
+This module includes automated tests that run via GitHub Actions against Drupal 10.6.x-11.5.x, plus 12.0.x as an expected-to-fail early warning (see `.github/drupal-ci.yml` for the exact PHP/MariaDB matrix).
 
 ### Test Plan
 
@@ -67,19 +67,21 @@ The CI pipeline runs the following for each Drupal version:
 
 #### Current coverage
 
-No automated test coverage yet. Verified manually against a fresh Drupal 11.3 install for this release: module enable, the search results route (with and without a `keys` query param), and the admin settings form all load correctly after converting every service lookup to real dependency injection.
+Unit, Kernel and Functional tests cover every class: the search controller and its title, the dynamic route, both forms (including the settings save and route rebuild), the search form block, and the search page and settings page access.
 
 ## Changelog
 
 ### 2.1.x
 
-- Narrowed Drupal core support to `^10.5 || ^11.2` (dropping EOL Drupal 9); `composer.json` previously had no `drupal/core` constraint at all
+- Narrowed Drupal core support to `^10.6 || ^11.3` (dropping EOL Drupal 9 and anything older than what CI tests); `composer.json` previously had no `drupal/core` constraint at all
 - Adopted the reusable GitHub Actions workflow architecture; moved CI to a shared, config-driven orchestrator in `bluecadet/web-gh-actions`
 - Converted every `\Drupal::` static service call to real constructor-based dependency injection across the controller, both forms, the block plugin, and the dynamic route-callback class
 - Fixed direct `$_GET` superglobal access in the search form's submit handler
 - Fixed a stale `bluecadet_gse` (missing "c") repo URL in `package.json`
 - Fixed several postcss plugins that were silently relying on an old transitive dependency rather than being declared directly; updated `@bluecadet/drops` to `^1.2.1` and `@bluecadet/bldr` from a pinned 1.x version to `2.0.0-alpha.12`
 - Added `extra.bluecadet-package-manager` composer.json metadata
+- Added Unit, Kernel and Functional test coverage for every class
+- Aligned the CI matrix with the other Should Support modules (10.6 / 11.3-11.5, plus 12.0.x as an early warning)
 
 ### 2.1.0
 
