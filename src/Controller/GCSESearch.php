@@ -72,7 +72,7 @@ class GCSESearch extends ControllerBase {
 
     // Alter page title to display search keys.
     $keys = $request->query->get('keys');
-    $title = $keys ? 'Search Results for ' . urldecode($keys) : 'Search Results';
+    $title = $keys ? t('Search results for @keys', ['@keys' => $keys]) : t('Search results');
 
     return $title;
 
